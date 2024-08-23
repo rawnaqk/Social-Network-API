@@ -66,7 +66,7 @@ router.delete('/api/thoughts/:id', async (req, res) => {
 });
 
 // Create a reaction
-router.post('/api/thoughts/:thoughtId/reactions', async (req, res) => {
+router.post('/api/thoughts/:thoughtid/reactions', async (req, res) => {
   try {
     const thought = await Thought.findById(req.params.thoughtId);
     if (!thought) {
@@ -81,7 +81,7 @@ router.post('/api/thoughts/:thoughtId/reactions', async (req, res) => {
 });
 
 // Delete a reaction
-router.delete('/api/thoughts/:thoughtId/reactions/:reactionId', async (req, res) => {
+router.delete('/api/thoughts/:thoughtid/reactions/:reactionid', async (req, res) => {
   try {
     const thought = await Thought.findById(req.params.thoughtId);
     if (!thought) {

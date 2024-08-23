@@ -64,7 +64,7 @@ router.delete('/api/users/:id', async (req, res) => {
 });
 
 // Add a friend to a user
-router.post('/api/users/:userId/friends/:friendId', async (req, res) => {
+router.post('/api/users/:userid/friends/:friendid', async (req, res) => {
   try {
     const user = await User.findById(req.params.userId);
     const friend = await User.findById(req.params.friendId);
@@ -82,7 +82,7 @@ router.post('/api/users/:userId/friends/:friendId', async (req, res) => {
 });
 
 // Remove a friend from a user
-router.delete('/api/users/:userId/friends/:friendId', async (req, res) => {
+router.delete('/api/users/:userid/friends/:friendid', async (req, res) => {
   try {
     const user = await User.findById(req.params.userId);
     if (!user || !user.friends.includes(req.params.friendId)) {
